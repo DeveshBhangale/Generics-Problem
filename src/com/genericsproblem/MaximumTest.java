@@ -1,19 +1,20 @@
 package com.genericsproblem;
 
 public class MaximumTest<T extends Comparable<T>> {
-	T a,b,c;
+	T a,b,c,d;
 
-	public MaximumTest(T a, T b, T c) {
+	public MaximumTest(T a, T b, T c,T d) {
 		this.a = a;
 		this.b = b;
 		this.c = c;
+		this.d = d;
 	}
 	
 	public T maximum() {
-		return MaximumTest.maximum(a,b,c);
+		return MaximumTest.maximum(a,b,c,d);
 	}
 	
-	public static <T extends Comparable<T>> T maximum(T a, T b,T c) {
+	public static <T extends Comparable<T>> T maximum(T a, T b,T c,T d) {
 		T max = a;
 		if(b.compareTo(max) > 0) {
 			max = b;
@@ -21,12 +22,15 @@ public class MaximumTest<T extends Comparable<T>> {
 		if(c.compareTo(max) > 0) {
 			max = c;
 		}
-		print(a ,b ,c, max);
+		if(d.compareTo(max) > 0) {
+			max = d;
+		}
+		print(a ,b ,c,d, max);
 		return max;
 	}
 	
-	public static <T> void print(T a, T b, T c, T max) {
-		System.out.printf("Max of %s, %s, %s  is %s\n",a,b,c,max);
+	public static <T> void print(T a, T b, T c,T d, T max) {
+		System.out.printf("Max of %s, %s, %s and %s  is %s\n",a,b,c,d,max);
 	}
 
 	public static void main(String[] args) {
@@ -53,15 +57,15 @@ public class MaximumTest<T extends Comparable<T>> {
 //					System.out.println(b +" is maximum than "+c+" & "+a);
 //				}
 //			}
-		Integer aInt=10,bInt=11,cInt=9;
-		Float aF =  1.1f, bF = 2.0f, cF = 1.1f;
-		String aStr = "abc", bStr = "bcs", cStr = "zzv";
+		Integer aInt=10,bInt=11,cInt=9,dInt=19;
+		Float aF =  1.1f, bF = 2.0f, cF = 1.1f,dF = 0.9f;
+		String aStr = "abc", bStr = "bcs", cStr = "zzv",dStr ="poo";
 
 		
 		
-		new MaximumTest(aInt,bInt,cInt).maximum();
-		new MaximumTest(aF,bF,cF).maximum();
-		new MaximumTest(aStr,bStr,cStr).maximum();
+		new MaximumTest(aInt,bInt,cInt,dInt).maximum();
+		new MaximumTest(aF,bF,cF,dF).maximum();
+		new MaximumTest(aStr,bStr,cStr,dStr).maximum();
 		
 		
 	}
