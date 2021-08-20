@@ -44,9 +44,7 @@ public class MaximumTest<T extends Comparable<T>> {
 	
 	
 	// Use Case - 3
-			String a = "Venkat", b = "vevesh", c = "vevesh";
-			System.out.println(a.compareTo(b));
-			System.out.println(a.compareTo(c));
+			String a = "Venkat", b = "Devesh", c = "Bridgelabz";
 			int res = a.compareTo(b);
 			if(res<0 || res == 0) {
 				int res1 = b.compareTo(c);
