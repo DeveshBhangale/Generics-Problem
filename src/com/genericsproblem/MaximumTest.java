@@ -57,6 +57,8 @@ public class MaximumTest<T extends Comparable<T>> {
 		Float aF =  1.1f, bF = 2.0f, cF = 1.1f;
 		String aStr = "abc", bStr = "bcs", cStr = "zzv";
 
+		
+		
 		new MaximumTest(aInt,bInt,cInt).maximum();
 		new MaximumTest(aF,bF,cF).maximum();
 		new MaximumTest(aStr,bStr,cStr).maximum();
